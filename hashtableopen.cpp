@@ -30,11 +30,13 @@ void hashTableOpen::insert(Passenger *passanger)
         hashNode node;
         node.key = key;
         node.passanger = passanger;
+        node.Node = nullptr;
         if (shit[key] == false)
             table[0] = node;
         else
         {
-
+            node.Node = table[key].Node;
+            table[key] = node;
         }
 //        else
 //        {
@@ -53,7 +55,7 @@ void hashTableOpen::remove(int key, Passenger *passanger)
 
 Passenger hashTableOpen::search(int key, Passenger *passanger)
 {
-
+    return *passanger;
 }
 
 
