@@ -14,7 +14,7 @@ public:
     void insert(Passenger* passanger);
     void remove(int key, Passenger* passanger);
 
-    Passenger search(int key);
+    Passenger search(int key, Passenger* passanger);
 private:
     int hash_function(string key);
     struct hashNode
