@@ -13,7 +13,7 @@ public:
     ~hashTableOpen();
     void insert(Passenger* passanger);
     void remove(int key, Passenger* passanger);
-
+    int hash_function(string key,int a);
     Passenger search(int key, Passenger* passanger);
 private:
     int hash_function(string key);
@@ -28,8 +28,8 @@ private:
     void chain(struct hashNode node, hashNode *nodeTree);
     hashNode* next(hashNode *node);
     hashNode* prev(hashNode *node);
-    hashNode table[21];
-    bool shit[21];
+    hashNode table[9];
+    bool shit[9];
 
 };
 

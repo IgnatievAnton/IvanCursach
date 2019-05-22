@@ -3,11 +3,10 @@
 //TODO можно сделать список который динамический но я не уверен что это будет хэщ таблица тогда лучше будет вектор.
 hashTableOpen::hashTableOpen()
 {
-    for (int i = 0; i < 21; i++)
+    for (int i = 0; i < 9; i++)
     {
         shit[i] = false;
     }
-    cout << "test" << endl;
 //    table = new hashNode[300];
 }
 
@@ -21,7 +20,7 @@ void hashTableOpen::insert(Passenger *passanger)
 {
     int key = hash_function(passanger->getFirstSecondName());
     cout << key << endl;
-    if (key > 21 || key < 0)
+    if (key > 8 || key < 0)
     {
         cout << "No diferent key! Use only english word in name" << endl;
     }
@@ -38,13 +37,7 @@ void hashTableOpen::insert(Passenger *passanger)
             node.Node = table[key].Node;
             table[key] = node;
         }
-//        else
-//        {
-//            if
-//        }
     }
-//    else
-
 }
 
 
@@ -59,8 +52,19 @@ Passenger hashTableOpen::search(int key, Passenger *passanger)
 }
 
 
+int hashTableOpen::hash_function(string key, int a)
+{
+//    char a[11];
+//    a = key;
+    int hash = toupper(key[0])-'1';
+    cout << hash << endl;
+    return hash;
+}
+
 int hashTableOpen::hash_function(string key)
 {
+//    char a[11];
+//    a = key;
     int hash = toupper(key[0])-'A';
     return hash;
 }
