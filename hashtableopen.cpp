@@ -18,7 +18,7 @@ hashTableOpen::~hashTableOpen()
 //TODO ну тут все понятно но надо сделать покрасивей что то не нравится.
 void hashTableOpen::insert(Passenger *passanger)
 {
-    int key = hash_function(passanger->getFirstSecondName());
+    int key = hash_function(passanger->getNumberPassport());
     cout << key << endl;
     if (key > 8 || key < 0)
     {
@@ -51,21 +51,48 @@ Passenger hashTableOpen::search(int key, Passenger *passanger)
     return *passanger;
 }
 
-
-int hashTableOpen::hash_function(string key, int a)
+void hashTableOpen::printHashNode(int key)
 {
-//    char a[11];
-//    a = key;
-    int hash = toupper(key[0])-'1';
-    cout << hash << endl;
-    return hash;
+    cout << "this key has the following passengers:" << endl;
+    bool a = printH(table[key].Node);
 }
+
+void hashTableOpen::printHashNode()
+{
+    cout << "this table has the following passengers:" << endl;
+    for (int i =0 ; i < 9; i++)
+    {
+        cout << "================================" << endl;
+        cout << "Hash key "<< i << ": "<< endl;
+        bool a = printH(table[i].Node);
+        cout << "================================" << endl;
+    }
+}
+
+bool hashTableOpen::printH(hashNode* node)
+{
+    if (node == nullptr)
+        return false;
+    else
+    {
+        cout << "================================" << endl;
+        cout << node->passanger->getFirstSecondName() << endl;
+        cout << node->passanger->getDateB() << endl;
+        cout << node->passanger->getNumberPassport() << endl;;
+        cout << node->passanger->getpathPassport() << endl;;
+        cout << "================================" << endl;
+        if (node->Node == nullptr)
+            printH(node->Node);
+        else
+            return true;
+    }
+
+}
+
 
 int hashTableOpen::hash_function(string key)
 {
-//    char a[11];
-//    a = key;
-    int hash = toupper(key[0])-'A';
+    int hash = toupper(key[0])-'1';
     return hash;
 }
 
@@ -79,7 +106,7 @@ void hashTableOpen::cheinRemove(Passenger *passanger, hashTableOpen::hashNode no
     {
         if (node.passanger == passanger)
         {
-//                table[]
+
         }
         else
         {

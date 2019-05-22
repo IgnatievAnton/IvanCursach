@@ -9,6 +9,7 @@ class Passenger
 {
 public:
     Passenger();
+    Passenger(string numPass,string pathPass,string fsn,string date);
     ~Passenger();
     string getNumberPassport();
     string getpathPassport();

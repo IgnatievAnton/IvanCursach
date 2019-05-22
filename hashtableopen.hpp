@@ -13,8 +13,10 @@ public:
     ~hashTableOpen();
     void insert(Passenger* passanger);
     void remove(int key, Passenger* passanger);
-    int hash_function(string key,int a);
     Passenger search(int key, Passenger* passanger);
+    void printHashNode(int key);
+    void printHashNode();
+
 private:
     int hash_function(string key);
     struct hashNode
@@ -23,6 +25,8 @@ private:
         Passenger* passanger;
         hashNode *Node = nullptr;
     };
+
+    bool printH(hashNode *node);
 
     void cheinRemove(Passenger* passanger, struct hashNode node, int pos);
     void chain(struct hashNode node, hashNode *nodeTree);

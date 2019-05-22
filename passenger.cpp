@@ -21,6 +21,14 @@ Passenger::Passenger()
     setDateB(temp);
 }
 
+Passenger::Passenger(string numPass, string pathPass, string fsn, string date)
+{
+    setNumberPassport(numPass);
+    setpathPassport(pathPass);
+    setDateB(date);
+    setFirstSecondName(fsn);
+}
+
 Passenger::~Passenger()
 {
 
