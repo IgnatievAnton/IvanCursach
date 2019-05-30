@@ -22,12 +22,12 @@ private:
     struct hashNode
     {
         int key;
-        Passenger* passanger;
-        hashNode *Node = nullptr;
+        Passenger* passanger = NULL;
+        hashNode *Node = NULL;
     };
 
-    bool printH(hashNode *node);
-
+    bool printH(int key, int a);
+    void printNextChain(struct hashNode node, int i);
     void cheinRemove(Passenger* passanger, struct hashNode node, int pos);
     void chain(struct hashNode node, hashNode *nodeTree);
     hashNode* next(hashNode *node);
