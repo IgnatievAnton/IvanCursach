@@ -1,14 +1,12 @@
 #include "Passenger.hpp"
 
-//TODO: Проверку на дурочка доделай потом когда будет не скучно
 Passenger::Passenger()
 {
     std::string temp ;
-//    int a;
     cout << "For create passanger:" << endl;
-    cout << "Enter number pasport: ";
+    cout << "Enter number pasport: " << endl;
     getline(cin,temp);
-
+    getline(cin,temp);
     setNumberPassport(temp);
     cout << "Enter Place and date of passport issue:" << endl;
     getline(cin,temp);
@@ -21,13 +19,13 @@ Passenger::Passenger()
     setDateB(temp);
 }
 
-Passenger::Passenger(string numPass, string pathPass, string fsn, string date)
-{
-    setNumberPassport(numPass);
-    setpathPassport(pathPass);
-    setDateB(date);
-    setFirstSecondName(fsn);
-}
+//Passenger::Passenger(string numPass, string pathPass, string fsn, string date)
+//{
+//    setNumberPassport(numPass);
+//    setpathPassport(pathPass);
+//    setDateB(date);
+//    setFirstSecondName(fsn);
+//}
 
 Passenger::~Passenger()
 {
@@ -42,6 +40,15 @@ string Passenger::getNumberPassport()
 string Passenger::getpathPassport()
 {
     return pathPassport;
+}
+
+void Passenger::printA()
+{
+    cout <<"Number Passport: "<< getNumberPassport()<<endl;
+    cout <<"Path Passport: "<< getpathPassport() <<endl;
+    cout <<"First Secind name:"<<getFirstSecondName()<<endl;
+    cout <<"date birthey:"<<getDateB()<<endl;
+
 }
 
 string Passenger::getFirstSecondName()
@@ -64,7 +71,7 @@ bool Passenger::checkString(string s)
 
 void Passenger::setNumberPassport(const string str)
 {
-    size_t sz = std::strlen(str.c_str());
+    size_t sz = strlen(str.c_str());
     if (sz > 11 || sz < 11)
     {
         cerr << "error 1: cant create numberPassport passanger" << endl;

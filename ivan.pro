@@ -4,10 +4,16 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
-        hashtableopen.cpp \
+        aviaticket.cpp \
+        listhash.cpp \
         main.cpp \
-        passenger.cpp
+        passenger.cpp \
+        avlcp.cpp \
+        ticket.cpp
 
 HEADERS += \
-    hashtableopen.hpp \
-    passenger.hpp
+    aviaticket.hpp \
+    listhash.hpp \
+    passenger.hpp \
+    avlcp.hpp \
+    ticket.hpp
