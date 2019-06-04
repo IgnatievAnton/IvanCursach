@@ -5,7 +5,9 @@ aviaReis::aviaReis()
     cout << "enter number avia reic: ";
     string temp;
     getline(cin,temp);
+    getline(cin,temp);
     numberReic = checkTrueReic(temp);
+    cout << "tut:" << numberReic;
     numberR();
     cout << "name avia company: ";
     getline(cin,temp);

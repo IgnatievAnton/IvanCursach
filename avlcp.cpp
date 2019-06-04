@@ -51,7 +51,7 @@ void avltree::insert(aviaReis *r, nodeptr& n, int ky)
         }
         else
         {
-            cout<<"Элемет существует\n"<<endl;
+            cout<<"this number is not empty\n"<<endl;
         }
     }
 int z = bsheight(n->left);
@@ -138,7 +138,7 @@ void avltree::del(int x,nodeptr &p)
     nodeptr d;
     if (p==NULL)
     {
-        cout<<"Простите, но такого элемента нет\n"<<endl;
+        cout<<"no have this reic\n"<<endl;
     }
     else if ( x < p->key)
     {
@@ -153,21 +153,21 @@ void avltree::del(int x,nodeptr &p)
         d=p;
         free(d);
         p=NULL;
-        cout<<"delited reic\n"<<endl;
+        cout<<"delited reic"<<endl;
     }
     else if (p->left == NULL)
     {
         d=p;
         free(d);
         p=p->right;
-        cout<<"Элемент удален\n"<<endl;
+        cout<<"delited reic"<<endl;
     }
     else if (p->right == NULL)
     {
         d=p;
         p=p->left;
         free(d);
-        cout<<"Элемент удален\n"<<endl;
+        cout<<"delited reic"<<endl;
     }
     else
     {
@@ -194,17 +194,14 @@ int avltree::deletemin(nodeptr &p)
 
 void avltree::printAllNode(nodeptr &n)
 {
-    if (n->left = NULL)
-       printAllNode(n->left);
-    else if(n->left == NULL && n->right != NULL)
-        printAllNode(n->right);
-    else if (n->left == NULL && n->right == NULL)
+    if (n == NULL)
+        return;
+    else {
+        cout << "-------------------------" <<endl;
         n->reic->print();
-    else if (n == NULL)
-        cout << "No have avia reic" << endl;
-//    if (n->left == NULL)
-//        printAllNode(n->right);
-    //    else if ()
+        printAllNode(n->left);
+        printAllNode(n->right);
+    }
 }
 
 void avltree::printReic(nodeptr &n,int key)
